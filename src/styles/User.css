@@ -1,0 +1,171 @@
+
+.all {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.one {
+    display: inline-block;
+    width: 225px;
+    height: 100%;
+    /* background-color: #003d4d;  */
+     /* #336699;  #00b3b3 #0086b3 */
+    background-color: #121619;
+    position: fixed;
+}
+
+.nav {
+    padding-top: 20px;
+}
+
+.nav a{
+    display: flex;
+    /* color: white; */
+    margin-left: 60px;
+    margin-top:20px;
+    text-decoration: none;
+}
+
+.nav .active {
+    color: indianred;
+    /* #dd99ff;  */
+    font-weight: bold;
+}   
+
+.nav .inactive {
+    color: white;
+    /* color: black; */
+    font-weight: normal;
+}
+
+.all_same {
+    display: inherit;
+    height: 100%;
+}
+
+.two {
+    padding-top: 30px;
+    padding-left: 50px;
+    margin-left: 200px;
+}
+
+.twotwo {
+    padding-top: 30px;
+    margin-left: 200px;
+}
+
+.two pre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.two span {
+    font-weight: normal;
+    
+}
+
+#info {
+    color: red;
+    font-size: 12px;
+}
+
+.two pre, p, span {
+    font-size: 15px;
+}
+
+.userButton {
+    margin-top: 40px;
+    display: block;
+    width: 400px;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* #user-component {
+    width: 500px;
+} */
+.modifica {
+    display: block;
+    width: 400px;
+    padding-top: 20px;
+}
+
+#happiness {
+    display: block;
+    padding-bottom: 60px;
+}
+
+#weight-and-happiness {
+    display: block;
+    width: 400px;
+}
+
+.logout {
+    height: 100%;
+    display: flex;
+}
+.logout a{
+    color: #8e7cc3;
+    margin-left: 60px;
+    margin-top:20px;
+    text-decoration: none;
+    float: bottom;
+    padding-bottom:290px;
+}
+.logout a:hover{
+    color:#5ce0e6;
+}
+
+.line {
+    display: block;
+    margin-top: 20px;
+    width: 225px;
+    height: 2px;
+    background-color: white;
+}
+
+.div-inline {
+    display: block;
+    width: 170px;
+    height: 35px;
+}
+
+.div-inline select {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#altceva label {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+#butonUpdate {
+    margin-top:60px;
+}
+
+.update {
+    margin-top: 10px;
+}
+
+table {
+    font-size: 14px;
+}
