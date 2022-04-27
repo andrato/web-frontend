@@ -41,7 +41,7 @@ function NavbarComponent(props) {
                 { 
                     animals.map(
                         (animal, key) => {
-                            return <NavLink to={`/categories/${animal.id}`}> {animal.name} </NavLink>
+                            return <NavLink to={`/animals/${animal.id}`}> {animal.name} </NavLink>
                         }
                     )
                 }

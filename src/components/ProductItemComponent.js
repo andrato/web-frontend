@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import Image from "../assets/1.jpeg";
+import Image from "../assets/catfood.jpg";
 // import PaymentService from '../services/PaymentService';
 
 export default function ProductItemComponent({id, image, name, price}) {

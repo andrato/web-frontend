@@ -9,6 +9,7 @@ import RegisterComponent from './components/RegisterComponent';
 import ProductsComponent from './components/ProductsComponent';
 import ProductsByCategoryComponent from './components/ProductsByCategoryComponent';
 import ProductComponent from './components/ProductComponent';
+import ProductsByAnimalComponent from './components/ProductsByAnimalComponent';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         <NavbarComponent />
         <Routes>
         <Route path='/' element={<ProductsComponent/>} />
-          {/* <Route path='/products/:id' element={<ProductComponent />} /> */}
+          <Route path='/products/:id' element={<ProductComponent />} />
           <Route path='/categories/:id' element={<ProductsByCategoryComponent/>} />
+          <Route path='/animals/:id' element={<ProductsByAnimalComponent/>} />
           <Route path='/login' element={<LoginComponent />} />
           <Route path='/register' element={<RegisterComponent />} />
           {/* <Route path='/users/:id' element={<UserComponent />} />
