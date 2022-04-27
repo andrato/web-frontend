@@ -1,20 +1,20 @@
-// import React from 'react';
-// import AuthService from '../services/auth/AuthService';
-// import { useNavigate } from "react-router-dom";
-// import '../styles/Login.css';
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+import UserService from '../services/UserService';
+import '../styles/Login.css';
 
-// function LogoutComponent () {
-//     const navigate = useNavigate();
+function LogoutComponent () {
+    const navigate = useNavigate();
 
-//     React.useEffect(() => { 
-//         AuthService.logout();
-//         navigate("/");
-//     }, [navigate]);
+    React.useEffect(() => { 
+        UserService.logout();
+        navigate("/");
+    }, [navigate]);
 
-//     return (
-//         <div >
-//         </div>
-//     )
-// }
+    return (
+        <div >
+        </div>
+    )
+}
 
-// export default LogoutComponent;
+export default LogoutComponent;

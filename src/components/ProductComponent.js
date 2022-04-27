@@ -19,11 +19,11 @@ function ProductComponent(props) {
         })
     }, []);
 
-    // React.useEffect(() => { 
-    //     ProductService.getProductInfo(id).then((response) => {
-    //         setProduct(response.data)
-    //     })
-    // }, []);
+    React.useEffect(() => { 
+        ProductService.getProductInfo(id).then((response) => {
+            setProductInfo(response.data)
+        })
+    }, []);
 
     function handleBuy(){
         console.log("aici");
@@ -39,7 +39,8 @@ function ProductComponent(props) {
                                     <h2>{product.name}</h2>
                                     {/* <pre>Goal: <span>{diet.price}</span></pre> */}
                                     <pre>Price: <span>{product.price} LEI</span></pre>
-                                    <pre>Description: <span>...</span></pre>
+                                    <pre>Quantity: <span>{product.quantity}</span></pre>
+                                    <pre>Description: <span>{productInfo.description}</span></pre>
                                     
                             
                                     {showButton &&<div id="div-btn" onClick={handleBuy}>

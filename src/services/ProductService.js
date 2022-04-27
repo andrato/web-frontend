@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { headers  } from './Header';
 
 class ProductService {
     getProducts() {
@@ -15,7 +16,11 @@ class ProductService {
     }
  
     getProduct(id) {
-        return axios.get(`http://localhost:8080/products?id=${id}`);
+        return axios.get(`http://localhost:8080/products/${id}`);
+    }
+
+    getProductInfo(id) {
+        return axios.get(`http://localhost:8080/productInfo?id=${id}`);
     }
 }
 

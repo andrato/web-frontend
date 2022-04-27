@@ -10,6 +10,9 @@ import ProductsComponent from './components/ProductsComponent';
 import ProductsByCategoryComponent from './components/ProductsByCategoryComponent';
 import ProductComponent from './components/ProductComponent';
 import ProductsByAnimalComponent from './components/ProductsByAnimalComponent';
+import CartComponent from './components/CartComponent';
+import UserComponent from './components/UserComponent';
+import LogoutComponent from './components/LogoutComponent';
 
 function App() {
   return (
@@ -21,17 +24,11 @@ function App() {
           <Route path='/products/:id' element={<ProductComponent />} />
           <Route path='/categories/:id' element={<ProductsByCategoryComponent/>} />
           <Route path='/animals/:id' element={<ProductsByAnimalComponent/>} />
+          <Route path='/cart' element={<CartComponent />} />
           <Route path='/login' element={<LoginComponent />} />
           <Route path='/register' element={<RegisterComponent />} />
-          {/* <Route path='/users/:id' element={<UserComponent />} />
-          <Route path='/users/:id/diets' element={<UserDietsComponent />} />
-          <Route path='/users/:id/updates' element={<UserWeightHappinessComponent />} />
-          <Route path='/users/:id/form' element={<UserFormComponent />} />
           <Route path='/logout' element={<LogoutComponent />} />
-          <Route path='/users/:id/allusers' element={<AllUsersComponent />} />
-          <Route path='/users/:id/allbillings' element={<AllBillingsComponent />} />
-          <Route path='/users/:id/alldiets' element={<AllDietsComponent />} />
-          <Route path='/users/:id/alldiets/:dietId' element={<AllDietsUpdateComponent />} /> */}
+          <Route path='/users/:id' element={<UserComponent />} />
         </Routes>
       </Router>
     </div>

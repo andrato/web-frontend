@@ -17,7 +17,7 @@ html, body {
     /* background-color: cadetblue; */
     height: 100%;
     width: 100%;
-    background: url("../assets/background34.jpg") no-repeat center center fixed;
+    background: url("../assets/pets.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -27,7 +27,6 @@ html, body {
 .login {
     display: block;
     width: 450px;
-    height: 400px;
     background-color:white;
     align-content: center;
     margin: 0 auto;
@@ -67,8 +66,8 @@ input{
     display: block;
     width: 100%;
     margin: 0 auto;
-    height: 40px;
-    margin-bottom: 30px;
+    height: 30px;
+    margin-bottom: 20px;
     /* background-color: #FFCFC6; */
     border-width: 1px;
 }
@@ -110,6 +109,7 @@ input{
     border-color: grey;
     border-style: solid;
     opacity: 1;
+    margin-bottom: 50px;
 }
 
 .register-info {
@@ -128,14 +128,14 @@ input{
     width: 100%;
 }
 
-.register-info-div {
+/* .register-info-div {
     display: flex;
     width: 100%;
     justify-content: space-between;
-}
+} */
 
 .div-inline {
-    width: 40%;
+    width: 100%;
 }
 
 .react-calendar.hide {

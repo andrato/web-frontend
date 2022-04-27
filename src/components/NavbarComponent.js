@@ -56,7 +56,7 @@ function NavbarComponent(props) {
                 <Link to={'/login'}> <FiUser /> </Link>
             </div>  
         </div>
-        {/* { animals.length &&  */}
+        { animals.length && 
         <div className="sub-menu">
             <div className="sub-nav">
                 { 
@@ -68,7 +68,7 @@ function NavbarComponent(props) {
                 }
             </div>  
         </div>
-        {/* }    */}
+        }
         </div>
     )
 }

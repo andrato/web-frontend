@@ -1,75 +1,76 @@
-// import React from 'react';
+import React from 'react';
 // import AuthService from '../services/auth/AuthService';
-// import { useNavigate } from "react-router-dom";
-// import '../styles/Login.css';
+import { useNavigate } from "react-router-dom";
+import UserService from '../services/UserService';
+import '../styles/Login.css';
 
-// function LoginComponent () {
-//     const navigate = useNavigate();
-//     // const user_token = localStorage.getItem("user_token");
-//     const user_id = localStorage.getItem("user_id");
+function LoginComponent () {
+    const navigate = useNavigate();
+    // const user_token = localStorage.getItem("user_token");
+    const user_id = localStorage.getItem("user_id");
 
-//     React.useEffect(() => { 
-//         if(user_id) {
-//             navigate(`/users/${user_id}`);
-//         }
-//     }, [user_id, navigate]);
+    React.useEffect(() => { 
+        if(user_id) {
+            navigate(`/users/${user_id}`);
+        }
+    }, [user_id, navigate]);
 
-//     async function handleSubmit(e) {
-//         e.preventDefault();
-//         const { username, password } = e.target.elements;
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const { username, password } = e.target.elements;
 
-//         const userInfo = { username: username.value 
-//                          , password: password.value};
+        const userInfo = { username: username.value 
+                         , password: password.value};
 
-//         // try {
-//         //     console.log("Suntem pe login");
-//         //     const { data } = await AuthService.login(userInfo);
-//         //     console.log(data);
-//         //     // localStorage.setItem('user_token', data);
-//         // }   
-//         // catch(error) {
-//         //     alert("Error on login: " + error);
-//         // }
-        
-//         try{
-//             console.log("Suntem pe getInfo");
-//             const {data} = await AuthService.getUserByUsername(userInfo.username);
-//             console.log("getInfo: " + data.id);
-//             localStorage.setItem('user_id', data.id);     
-//             localStorage.setItem('is_admin', data.isAdmin);           
-//             navigate(`/users/${data.id}`)
-//         }
-//         catch(error) {
-//             alert("Error on getUserByUsername: " + error);
-//         }
-//     }
+        try {
+            const { data } = await UserService.login(userInfo);
+            console.log(data);
+            
+            localStorage.setItem('user_id', data.id);   
+            localStorage.setItem('username', data.username);  
+            localStorage.setItem('token', data.token); 
+            localStorage.setItem('is_admin', false);
 
-//     return (
-//         <div className="background">
-//             <div className="login">
-//                 <div className="content">
-//                     <form onSubmit={handleSubmit}>
-//                         <h3>Sign In</h3>
+            for(let x of data.roles) {
+                if(x == "ROLE_ADMIN") {
+                    localStorage.setItem('is_admin', true); 
+                    break; 
+                }
+            }
 
-//                         <div className="info">
-//                             {/* <label>Email address</label> */}
-//                             <input id="username" type="email" placeholder="Enter email" />
-//                         </div>
+            navigate(`/users/${data.id}`)
+        }   
+        catch(error) {
+            alert("Error on login: " + error);
+        }
+    }
 
-//                         <div className="info">
-//                             {/* <label>Password</label> */}
-//                             <input id="password" type="password" placeholder="Enter password" />
-//                         </div>
+    return (
+        <div className="background">
+            <div className="login">
+                <div className="content">
+                    <form onSubmit={handleSubmit}>
+                        <h3>Sign In</h3>
 
-//                         <button type="submit" className="loginButton">SUBMIT</button>
-//                         <p className="password"> Don't have an account?
-//                             <a href="/register"> Sign up!</a>
-//                         </p>
-//                     </form>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
+                        <div className="info">
+                            {/* <label>Email address</label> */}
+                            <input id="username" type="email" placeholder="Enter email" />
+                        </div>
 
-// export default LoginComponent;
+                        <div className="info">
+                            {/* <label>Password</label> */}
+                            <input id="password" type="password" placeholder="Enter password" />
+                        </div>
+
+                        <button type="submit" className="loginButton">SUBMIT</button>
+                        <p className="password"> Don't have an account?
+                            <a href="/register"> Sign up!</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default LoginComponent;

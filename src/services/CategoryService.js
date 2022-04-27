@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { headers  } from './Header';
 
 class CategoryService {
     getCategories() {
