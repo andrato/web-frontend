@@ -24,7 +24,7 @@ function CartComponent () {
     }, [navigate, username]);
 
     function handleBuy() {
-        CartService.purchaseProducts(orderId).then((response) => {
+        CartService.purchaseProducts(Number(orderId)).then((response) => {
             navigate("/");
         })
         .catch((err) => {console.log(err); alert("Error on handleBuy " + err)})

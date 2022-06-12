@@ -6,14 +6,10 @@ class UserService {
         return axios.get(`http://localhost:8080/users/`);
     }
 
-    // login(obj) {
-    //     return axios.post(`http://localhost:8080/auth/login`, obj);
-    // }
-
-    // update(id, obj){
-    //     console.log(obj);
-    //     return axios.put(`http://localhost:8080/users/${id}`, obj);
-    // }
+    update(id, obj){
+        console.log(`http://localhost:8080/users/${id}`);
+        return axios.put(`http://localhost:8080/users/`, obj, {headers: headers});
+    }
 
     getUserById(id){
         return axios.get(`http://localhost:8080/users/${id}`, {headers: headers});

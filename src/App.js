@@ -13,6 +13,8 @@ import ProductsByAnimalComponent from './components/ProductsByAnimalComponent';
 import CartComponent from './components/CartComponent';
 import UserComponent from './components/UserComponent';
 import LogoutComponent from './components/LogoutComponent';
+import UserBillingsComponent from './components/UserBillingsComponent';
+import UserFormComponent from './components/UserFormComponent';
 
 function App() {
   return (
@@ -29,6 +31,10 @@ function App() {
           <Route path='/register' element={<RegisterComponent />} />
           <Route path='/logout' element={<LogoutComponent />} />
           <Route path='/users/:id' element={<UserComponent />} />
+          <Route path='/users/:id/form' element={<UserFormComponent />} />
+          <Route path='/users/:id/allusers' element={<UserComponent />} />
+          <Route path='/users/:id/allbillings' element={< UserComponent/>} />
+          <Route path='/users/:id/billings' element={< UserBillingsComponent/>} />
         </Routes>
       </Router>
     </div>

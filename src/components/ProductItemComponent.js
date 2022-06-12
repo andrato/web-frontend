@@ -19,16 +19,14 @@ export default function ProductItemComponent({id, image, name, price}) {
 
     // isDietBought();
     async function handleBuy() { 
-        console.log("Add to cart")
         if(username && id) {
-            // console.log("sunt aici, inainte de a adauga")
             const obj = {
                 productId: id,
                 email: username
             }
             try {
                 const { data } = await CartService.addToCart(obj);
-                console.log(data);
+                alert("Item successfully added")
             }   
             catch(error) {
                 console.log(error);

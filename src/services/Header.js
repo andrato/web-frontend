@@ -1,6 +1,6 @@
 
 export const headers = {
     'Content-Type': 'application/json',
-    'Accept': '*/*',
+    // 'Accept': '*/*',
     'Authorization': 'Bearer ' + localStorage.getItem("token")
 }

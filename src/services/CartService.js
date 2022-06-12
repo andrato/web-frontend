@@ -13,8 +13,8 @@ class CartService {
         return axios.get(`http://localhost:8080/orders/user?id=${id}`, {headers: headers});
     }
 
-    getAllUserBillings() {
-        return axios.get('http://localhost:8080/orders/', {headers: headers});
+    getAllUserBillings(id) {
+        return axios.get(`http://localhost:8080/orders/user/${id}`, {headers: headers});
     }
 
     getBillings(){
@@ -23,7 +23,7 @@ class CartService {
 
     purchaseProducts(id){
         console.log("aici " + id);
-        return axios.post(`http://localhost:8080/orders/${id}`, {headers: headers});
+        return axios.get(`http://localhost:8080/orders/${id}`, {headers: headers});
     }
 }
 

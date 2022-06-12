@@ -17,6 +17,7 @@ function UserComponent(props) {
     React.useEffect(() => { 
         UserService.getUserById(id).then((response) => {
             setUser(response.data);
+            console.log(response);
         })
     }, [id]);
 
@@ -32,7 +33,6 @@ function UserComponent(props) {
                     <NavLink to={`/users/${id}/billings`} className="inactive"> My billings </NavLink>
                     {is_admin!="false" && <div className="line"></div>}
                     {is_admin!="false" &&<NavLink to={`/users/${id}/allusers`} className="inactive"> All users </NavLink>}
-                    {is_admin!="false" &&<NavLink to={`/users/${id}/allproducts`} className="inactive"> All products </NavLink>}
                     {is_admin!="false" &&<NavLink to={`/users/${id}/allbillings`} className="inactive"> All billings </NavLink>}
                     <div className="line"></div>
                 </div>
